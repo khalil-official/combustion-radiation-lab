@@ -14,6 +14,7 @@
 ///  See LI_2D for specific description of values passed.
 ///  LI_3D and LI_4D are tested by comparison of the rcSLW code to the python version.
 
+#include <algorithm>
 #include <vector>
 
 using namespace std;

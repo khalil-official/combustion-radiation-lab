@@ -27,6 +27,8 @@ option(BUILD_FORTRAN_EXAMPLES  "Build Fortran examples"  OFF)
 
 option(BUILD_DOCS              "Build radlib docs"       OFF)
 
+option(RADLIB_BUILD_TESTS      "Build radlib tests"      OFF)
+
 ############################### RADLIB ###############################
 
 project(radlib VERSION 1.0 LANGUAGES CXX)
@@ -71,4 +73,11 @@ endif()
 
 if(BUILD_DOCS)
     add_subdirectory(docs "${CMAKE_CURRENT_BINARY_DIR}/docs")
+endif()
+
+############################### TESTS ##################################
+
+if(RADLIB_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
 endif()

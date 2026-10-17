@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-label="Combustion Radiation Lab banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="1" stop-color="#1c2b33"/>
+    </linearGradient>
+    <radialGradient id="flame" cx="0.5" cy="0.85" r="0.9">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="0.45" stop-color="#ef8354"/>
+      <stop offset="1" stop-color="#b23a48" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.8" r="0.75">
+      <stop offset="0" stop-color="#4f772d" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#4f772d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="920" height="220" rx="14" fill="url(#bg)"/>
+  <!-- radiative rays from the combustion zone -->
+  <g stroke="#8ecae6" stroke-width="1.6" opacity="0.5">
+    <line x1="150" y1="150" x2="60"  y2="60"/>
+    <line x1="150" y1="150" x2="130" y2="35"/>
+    <line x1="150" y1="150" x2="215" y2="30"/>
+    <line x1="150" y1="150" x2="40"  y2="110"/>
+    <line x1="150" y1="150" x2="265" y2="75"/>
+  </g>
+  <ellipse cx="150" cy="150" rx="120" ry="55" fill="url(#glow)"/>
+  <path d="M150 45 C 190 90, 205 115, 185 140 C 175 152, 160 158, 150 158
+           C 140 158, 125 152, 115 140 C 95 115, 110 90, 150 45 Z"
+        fill="url(#flame)"/>
+  <path d="M150 95 C 168 118, 172 132, 162 143 C 157 149, 152 151, 150 151
+           C 148 151, 143 149, 138 143 C 128 132, 132 118, 150 95 Z"
+        fill="#fff3b0" opacity="0.9"/>
+  <!-- gas species labels -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#8ecae6">
+    <text x="315" y="60">H₂O</text>
+    <text x="315" y="92">CO₂</text>
+    <text x="315" y="124">CO</text>
+    <text x="315" y="156">soot</text>
+  </g>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="400" y="92" font-size="30" font-weight="700" fill="#f2f6f7">Combustion Radiation Lab</text>
+    <text x="400" y="124" font-size="16" fill="#c9d6df">Radiative property models for combustion gases and soot</text>
+    <text x="400" y="150" font-size="14" fill="#9fb4bf">Planck-mean · WSGG (Bordbar 2020) · RCSLW</text>
+    <text x="400" y="176" font-size="13" fill="#7f9aa6">C++17 · CMake · MSVC &amp; GCC · development edition of BYUignite/radlib</text>
+  </g>
+</svg>

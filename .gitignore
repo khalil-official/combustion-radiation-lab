@@ -1,3 +1,4 @@
 tags
 installed
 build/*
+data/rcslw_data/*.bin

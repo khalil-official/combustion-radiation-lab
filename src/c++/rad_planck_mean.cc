@@ -57,7 +57,7 @@ void rad_planck_mean::get_k_a_oneband(double       &kabs,
 
     if(iband != 0) {
         cerr << "\n\n***** rad_planck_mean::get_k_a_oneband: iband should be zero since there is only one band in this model *****\n" << endl; 
-        exit(0); 
+        exit(EXIT_FAILURE); 
     }
 
     //----- the curve fits are in the range 300<T<2500. If T is out of bounds either quit,
@@ -66,7 +66,7 @@ void rad_planck_mean::get_k_a_oneband(double       &kabs,
 
     // if(T < 300.0 || T > 2500.0) {
     //     cerr << "\n\n***** rad_planck_mean::get_k_a_oneband: T is out of range 300-2500 K *****\n" << endl; 
-    //     exit(0); 
+    //     exit(EXIT_FAILURE); 
     // }
 
     kabs = 0.0;

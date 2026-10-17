@@ -103,7 +103,7 @@ void rad_wsgg::get_k_a_oneband(double       &kabs,
 
     if(iband < 0 || iband >= nGGa) {
         cerr << "\n\n***** rad_wsgg::get_k_a_oneband: iband out of range *****\n" << endl; 
-        exit(0); 
+        exit(EXIT_FAILURE); 
     }
 
     //------------------------

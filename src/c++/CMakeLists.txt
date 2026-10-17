@@ -7,6 +7,19 @@ add_library(radlib::radlib ALIAS radlib)
 
 add_definitions(-DRCSLW_DATA_DIR=${INSTALLED_RCSLW_DATA_DIR})
 
+#-------- MSVC portability: rad_rcslw.cc uses M_PI, which MSVC only exposes
+#-------- in <cmath> when _USE_MATH_DEFINES is defined.
+
+if(MSVC)
+    target_compile_definitions(radlib PRIVATE _USE_MATH_DEFINES)
+    target_compile_options(radlib PRIVATE /W4)
+    # The headers declare no dllexport macros; export every symbol so an
+    # import library is generated and consumers can link the DLL.
+    set_target_properties(radlib PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+else()
+    target_compile_options(radlib PRIVATE -Wall -Wextra)
+endif()
+
 #################### Local source files
 
 target_sources(radlib 

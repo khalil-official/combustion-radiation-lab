@@ -109,7 +109,7 @@ void rad_rcslw::get_k_a_oneband(double         &kabs,
 
     if(iband < 0 || iband >= nGGa) {
         cerr << "\n\n***** rad_rcslw::get_k_a_oneband: iband out of range *****\n" << endl; 
-        exit(0); 
+        exit(EXIT_FAILURE); 
     }
 
     //--------------- kabs
@@ -344,7 +344,7 @@ void rad_rcslw::set_Fpts(){
 
     if(nGG > 25){
         cout << endl << "ERROR: nGG too high for quadrature: nGG max is currently 25" << endl;
-        exit(0);
+        exit(EXIT_FAILURE);
     }
 
     vector<vector<double> > W(26);
@@ -440,7 +440,7 @@ void rad_rcslw::set_Falbdf_CO2_CO_H2O_at_P(){
 
     if(P < P_table[0] || P > P_table.back() ) {
         cout << "Pressure = " << P << " atm is out of range\n";
-        exit(0);
+        exit(EXIT_FAILURE);
     }
     else if(P==P_table[0]){
         P1 = P_table[0];
@@ -540,7 +540,7 @@ void rad_rcslw::get_FI_albdf_tables(const string Ptable_file_name,
     ifile.open(Ptable_file_name, ios::in | ios::binary);
     if(!ifile){
         cout << endl << "error opening file: " << Ptable_file_name << endl;
-        exit(0);
+        exit(EXIT_FAILURE);
     }
     float data;
     int ntot = nx*ny*nz;
@@ -572,7 +572,7 @@ void rad_rcslw::get_FI_albdf_tables(const string Ptable_file_name,
     ifile.open(Ptable_file_name, ios::in | ios::binary);
     if(!ifile){
         cout << endl << "error opening file: " << Ptable_file_name << endl;
-        exit(0);
+        exit(EXIT_FAILURE);
     }
     float data;
     int ntot = nx*ny*nz*nw;
